@@ -5,8 +5,8 @@
    Tutorial 13
    Case Problem 2
 
-   Author: 
-   Date:   
+   Author: Steven Thompson & Dylan Brune
+   Date:   April 10, 2019
    
    Filename: dl_expenses.js
    
@@ -30,9 +30,6 @@
       Formats the value, "val", as U.S. currency.
       
 */
-
-
-
 
 
 
