@@ -7,8 +7,8 @@
 
    Filename: ws_cloud.js
 
-   Author:  
-   Date:    
+   Author:  Annie Cho
+   Date:    2018-03-01
    
    Function List
    =============
@@ -36,10 +36,61 @@
 */
 
 
+window.addEventListener("load", function() {
+   // Retrieve only the text of the speech
+   var wordContent = document.getElementById("speech").textContent;
+   
+   // Change all characters to lowercase letters
+   wordContent = wordContent.toLowerCase();
+   
+   // Remove all punctuation marks from the text
+   wordContent = wordContent.replace(/[!\.,:;\?\'"\(\)\{\}\d\-]/g,"");
+   
+   // Remove all stop words from the text
+   for (var i = 0; i < stopWords.length; i++) {
+      var stopWordsRE = new RegExp("\\b"+stopWords[i]+"\\b", "g");
+      wordContent = wordContent.replace(stopWordsRE, "");
+   }
+   
+   // Remove all leading and trailing white space characters
+   wordContent = wordContent.trim();
+   
+   // Split the text at every occurence of 1 or more white space characters
+   var wordArray = wordContent.split(/\s+/g);
+   
+   // Generate a 2-D array of unique words and their counts
+   var uniqueWords = findUnique(wordArray);
+   
+   // Sort the array in descending order of count
+   uniqueWords.sort(sortByCount);   
+   
+   // Limit the array to the top 100 words
+   uniqueWords.length = 100;
+   
+   // Determine the count of the least-used word in the array
+   var minimumCount = uniqueWords[99][1];
+   
+   // Determine the count of the 3rd most-used word in the array
+   var top3Count = uniqueWords[2][1];
+   
+   // Sort the array in alphabetical order
+   uniqueWords.sort(sortByWord);
+   
 
-
-
-
+   // Loop through the unique words and format them according to their usage
+   for (var i = 0; i < uniqueWords.length; i++) {
+      var cloudWord = document.createElement("span");
+      cloudWord.textContent = uniqueWords[i][0];
+      var wordSize = Math.min(6, 0.45*uniqueWords[i][1]/minimumCount);
+      cloudWord.style.fontSize = wordSize + "em";
+      cloudWord.style.transform = "rotate(" + randomValue(-30, 30) + "deg)";
+      if (uniqueWords[i][1] >= top3Count) {
+         cloudWord.style.color = "rgb(251, 191, 191)";
+         cloudWord.style.textShadow = "2px 2px 5px rgb(51, 51, 51)";
+      }
+      document.getElementById("cloud").appendChild(cloudWord);
+   }
+});
 
 
 
