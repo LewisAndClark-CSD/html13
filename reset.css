@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 5
+   
+   
+   Tutorial 5 Reset Style Sheet
+   
+   Filename: reset.css
+
+*/
+
+
+/* Basic styles to be used with all devices and under all conditions */
+
+
+header,  nav, section { 
+   display: block;
+}
+
+body, h1, header, html, img, 
+li, main, nav, nav a, section, ul {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;  
+}
+
+
+/* Set the default page element styles */
+
+body {
+   line-height: 1.2em;
+}
+
+ul, ol {
+   list-style: none;
+}
+
+nav ul {
+   list-style: none;
+   list-style-image: none;
+}
+
+nav a {
+   text-decoration: none;
+}
+
