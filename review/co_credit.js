@@ -7,8 +7,8 @@
 
    Credit Card Form Script
    
-   Author: 
-   Date:   
+   Author: Aisha Jahlan
+   Date:   2018-03-01
    
    Filename: co_credit.js
    
@@ -44,10 +44,50 @@
 
 */
 
+window.addEventListener("load", function(){   
+   // Retrieve the field/value pairs from the URL
+   var orderData = location.search.slice(1);
+   orderData = orderData.replace(/\+/g," ");
+   orderData = decodeURIComponent(orderData);
+   var orderFields = orderData.split(/[&=]/g);
+   
+   // Write the field values to the order form
+   document.forms.order.elements.modelName.value = orderFields[3];
+   document.forms.order.elements.modelQty.value = orderFields[5]; 
+   document.forms.order.elements.orderCost.value = orderFields[7];
+   document.forms.order.elements.shippingType.value = orderFields[9];   
+   document.forms.order.elements.shippingCost.value = orderFields[13];
+   document.forms.order.elements.subTotal.value = orderFields[15];
+   document.forms.order.elements.salesTax.value = orderFields[17];
+   document.forms.order.elements.cartTotal.value = orderFields[19];    
+} );
 
+window.addEventListener("load", function() {
+   document.getElementById("subButton").onclick = runSubmit;
+   document.getElementById("cardHolder").oninput = validateName;
+   document.getElementById("cardNumber").oninput = validateNumber;  
+   document.getElementById("expDate").oninput = validateDate;
+   document.getElementById("cvc").oninput = validateCVC;   
+});
 
+function runSubmit() {
+   validateName();
+   validateCredit();
+   validateNumber();
+   validateDate();
+   validateCVC();
+}
 
-
+function validateDate() {
+   var cardDate = document.getElementById("expDate");
+   if (cardDate.validity.valueMissing) {
+      cardDate.setCustomValidity("Enter the expiration date");
+   } else if (/^(0[1-9]|1[0-2])\/20[12]\d$/.test(cardDate.value) === false) {
+      cardDate.setCustomValidity("Enter a valid expiration date");      
+   } else {
+      cardDate.setCustomValidity("");
+   }   
+}
 
 
 
