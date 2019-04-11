@@ -7,8 +7,8 @@
 
    Shopping Cart Form Script
    
-   Author: 
-   Date:   
+    Author:  Jason and Aspen
+    Date:   April 10, 2019
    
    Filename: co_cart.js
    
@@ -27,14 +27,6 @@
       Formats val as U.S.A. currency
    
 */ 
-
-
-
-
-
-
-
-
 
 
 function formatNumber(val, decimals) {
