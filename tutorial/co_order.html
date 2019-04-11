@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
    <!--
-    New Perspectives on HTML5, CSS3, and JavaScript 6th Edition
+    New Perspectives on HTML5, CSS3 and JavaScript 6th Edition
     Tutorial 13
-    Review Assignment
+    Tutorial Case
     
-    Coctura Cart Page
-    Author: 
-    Date:   
+    Coctura Order Page
+    Author: send more help
+    Date: 4-10-2019  
 
-    Filename: co_cart.html
+    Filename: co_order.html
    -->
    
-   <title>Coctura Shopping Chart</title>
+   <title>Coctura Orders</title>
    <meta charset="utf-8" />
    <link href="co_base.css" rel="stylesheet"  />
-   <link href="co_layout3.css" rel="stylesheet"  />     
-
+   <link href="co_layout1.css" rel="stylesheet"  />
+    
 </head>
 
 <body>
    <header>
       <section>
-         <form id="memberForm">
+         <form id="memberForm" method="post" action="">
             <label for="username">Member Name</label>
             <input id="username" name="user" type="text" />
             <label for="password">Password</label>
@@ -53,32 +53,42 @@
       </nav>
    </header>
    <section id="summary">
-      <h1>EC115 Pump Espresso Machine</h1>
-      <h2>by <a href="#">Baxter Coffee</a></h2>
-      <h3>Customer Rating (903 votes): <img src="co_stars4.png" alt="4 stars" /></h3>
-      <img src="co_espresso.png" alt="" />
-      <p>Prepare espresso drinks at home with EC115 Pump Espresso Machine by Baxter
-         Coffee. The EC115 creates delicious cappuccinos with rich foam using
-         our patented nozzle system. You can enjoy your espresso almost immmediately
-         thanks to the thermolink<sup>&reg;</sup> technology. With self-priming, the
-         EC115 is always ready to go. The EC115 is easily customizable with filters 
-         that support single and double shots.</p>
+      <h1>DigiPot<sup>&reg;</sup> Multi-Functional Pressure Cooker</h1>
+      <h2>by <a href="#">Smart Chef</a></h2>
+      <h3>Customer Rating (1,028 votes): <img src="co_stars.png" alt="4.5 stars" /></h3>
+      <img src="co_cooker.png" alt="" />
+      <p>DigiPot is a smart and safe electric pressure cooker, speeding up
+         cooking times while still using up to 70% less energy. The
+         DigiPot multi-use cooker is programmable and can act as a pressure
+         cooker, slow cooker, rice cooker, and steamer. Cook your favorite
+         dishes with the press of a button. A 24-hour timer allows for delayed cooking.
+         Comes in 4-, 6-, and 8-quart models.
+      </p>
    </section>
    
    <section id="orderSection">
-      <form id="cart" name="cart">
+      <form id="orderForm" name="orderForm">
         
-        <table id="cartTable">
-           <caption>Shopping Cart</caption>
+        <table id="orderTable">
+           <caption>Product Order</caption>
+           <tr>
+              <td colspan="3">
+                 <input type="text" id="orderDate" name="orderDate" readonly />
+              </td>
+           </tr>
            <tr>
               <td>
-                 <label>EC115 Pump Espresso Machine ($249.95)</label>
-                 <input type="hidden" name="modelCost" id="modelCost" value="249.95" />
-                 <input type="hidden" id="modelName" name="modelName" value="ECC115 Pump Espresso Machine ($249.95)" />
+                 <label for="model">Model</label>
+                 <select name="model" id="model">
+                    <option value="89.95">4-Quart ($89.95)</option>
+                    <option value="129.95" selected>6-Quart ($129.95)</option>
+                    <option value="159.95">8-Quart ($159.95)</option>
+                 </select>   
+                 <input type="hidden" id="modelName" name="modelName" />
               </td>
               <td class="rightA">
-                 <label for="modelQty">Qty</label>
-                 <select name="modelQty" id="modelQty">
+                 <label for="qty">Qty</label>
+                 <select name="qty" id="qty">
                     <option value="1" selected>1</option>
                     <option value="2">2</option><option value="3">3</option>
                     <option value="4">4</option><option value="5">5</option><option value="6">6</option>
@@ -87,27 +97,28 @@
                  </select>   
               </td>                 
               <td>
-                 <input type="text" name="orderCost" id="orderCost" size="10" readonly />
+                 <input type="text" name="initialCost" id="initialCost" size="10" readonly />
               </td>
            </tr>
            <tr>
               <td colspan="2"> 
-                 <input type="hidden" id="shippingType" name="shippingType" />                
                  <fieldset>
-                    <legend>Shipping</legend>
-                    <label><input type="radio" id="overnight" name="shipping" value="28.50" checked /> Overnight Shipping ($28.50 per)</label>
-                    <label><input type="radio" id="day_2" name="shipping" value="19.95" /> 2-Day Shipping ($19.95 per)</label>   
-                    <label><input type="radio" id="ground" name="shipping" value="12.95" /> Ground Shipping ($12.95 per)</label> 
+                    <legend>Protection Plan</legend>
+                    <label><input type="radio" id="plan_0" name="protection" value="0" checked /> No protection plan ($0.00 each)</label>
+                    <label><input type="radio" id="plan_1" name="protection" value="11.95" /> 1-year protection plan ($11.95 each)</label>   
+                    <label><input type="radio" id="plan_2" name="protection" value="15.95" /> 2-year protection plan ($15.95 each)</label> 
+                    <label><input type="radio" id="plan_3" name="protection" value="19.95"  /> 3-year protection plan ($19.95 each)</label>
                  </fieldset>
+                 <input type="hidden" id="protectionName" name="protectionName" />
               </td>
               <td>
-                 <input type="text" name="shippingCost" id="shippingCost" size="10" readonly />
+                 <input type="text" name="protectionCost" id="protectionCost" size="10" readonly />
               </td>
            </tr>        
            <tr>
               <td colspan="2" class="rightA">Subtotal</td>
               <td class="outcell">
-                 <input type="text" name="subTotal" id="subTotal" size="10" readonly />
+                 <input type="text" name="subtotal" id="subtotal" size="10" readonly />
               </td>
            </tr>
 
@@ -121,11 +132,11 @@
            <tr>
               <td colspan="2" class="rightA">TOTAL</td>
               <td>
-                 <input type="text" name="cartTotal" id="cartTotal" size="10" readonly />
-             </td>
+                 <input type="text" name="totalCost" id="totalCost" size="10" readonly />
+              </td>
            </tr>
         </table>
-        <input type="submit" id="buttonAdd" value="Checkout" />
+        <input type="submit" id="buttonAdd" value="add to cart" />
 
       </form>
    </section>

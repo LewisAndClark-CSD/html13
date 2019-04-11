@@ -3,19 +3,19 @@
 /*
    New Perspectives on HTML5, CSS3, and JavaScript 6th Edition
    Tutorial 13
-   Review Assigment
+   Tutorial Case
 
-   Shopping Cart Form Script
+   Order Form Script
    
-   Author: 
-   Date:   
+   Author: send help
+   Date: 4-10-2019
    
-   Filename: co_cart.js
+   Filename: co_order.js
    
    Function List
    =============
    
-   calcCart()
+   calcOrder()
       Calculates the cost of the customer order
       
    formatNumber(val, decimals)
@@ -26,22 +26,9 @@
    formatUSACurrency(val)
       Formats val as U.S.A. currency
    
-*/ 
+*/
 
-
-
-
-
-
-
-
-
-
-function formatNumber(val, decimals) {
-   return val.toLocaleString(undefined, {minimumFractionDigits: decimals, 
-                                         maximumFractionDigits: decimals});
-}
-
-function formatUSCurrency(val) {
-   return val.toLocaleString('en-US', {style: "currency", currency: "USD"} );
-}
+window.addEventListener("load", function() {
+  var orderForm = document.forms.orderForm;
+  orderForm.elements.orderDate.value = new Date().toDateString();
+});
