@@ -7,18 +7,19 @@
       Case Problem 3
 
       Media Arts Society Registration Form #2
-      Author: 
-      Date:   
+      Author: Lane and Ruiz
+      Date:   4/10/19
 
       Filename:  mas_reg2.html
 
    -->
-   
+
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <title>MAS Registration Payment Form</title>
    <link href="mas_base.css" rel="stylesheet" />
    <link href="mas_styles.css" rel="stylesheet" />
+   <script src="mas_reg2.js" async> </script>
 >
 </head>
 
@@ -34,9 +35,9 @@
             <li><a href="#">Education</a></li>
             <li><a href="#">Jobs</a></li>
          </ul>
-      </nav>       
+      </nav>
    </header>
-   
+
    <aside id="reg2Aside">
       <table>
          <caption>Registration Information</caption>
@@ -48,7 +49,7 @@
          </tr>
          <tr>
             <th>E-mail</th><td><span id="regEmail"></span></td>
-         </tr>         
+         </tr>
          <tr>
             <th>Phone</th><td><span id="regPhone"></span></td>
          </tr>
@@ -57,45 +58,45 @@
          </tr>
          <tr>
             <th>Banquet Guest ($55 ea.)</th><td><span id="regBanquet"></span></td>
-         </tr> 
+         </tr>
          <tr>
             <th>MAS22 Media Pack ($115)</th><td><span id="regPack"></span></td>
-         </tr>  
+         </tr>
          <tr>
             <th>TOTAL</th><td><span id="regTotal"></span></td>
-         </tr> 
-      </table>                                               
-   </aside>   
-   
+         </tr>
+      </table>
+   </aside>
+
    <section id="section2">
-      <h1>MAS22 Payment Form</h1>      
-       <form id="credit" name="credit" method="post" action="co_final.html">         
+      <h1>MAS22 Payment Form</h1>
+       <form id="credit" name="credit" method="post" action="co_final.html">
          <fieldset id="creditcard">
             <legend>Credit Information</legend>
 
             <label for="cardHolder">Card Holder*</label>
-            <input name="cardHolder" id="cardHolder" required type="text" />    
-            
-            <label>Credit Company*</label>          
+            <input name="cardHolder" id="cardHolder" required type="text" />
+
+            <label>Credit Company*</label>
             <fieldset id="cards">
-               
+
                <label class="cardLabel">
                   <input name="company" value="amex" type="radio" required />
                   <img src="mas_amex.png" alt="American Express" />
                </label>
-               <label class="cardLabel">               
+               <label class="cardLabel">
                   <input name="company" value="discover" type="radio" />
                   <img src="mas_discover.png" alt="Discover" />
                </label>
-               <label class="cardLabel">                  
+               <label class="cardLabel">
                   <input name="company" value="master" type="radio"  />
                   <img src="mas_master.png" alt="MasterCard" />
                </label>
-               <label class="cardLabel">                  
+               <label class="cardLabel">
                   <input name="company" value="visa" type="radio"  />
                   <img src="mas_visa.png" alt="Visa" />
                </label>
-            </fieldset>          
+            </fieldset>
 
             <label for="cardNumber">Credit Card Number*</label>
             <input name="cardNumber" id="cardNumber" required type="text"
@@ -108,11 +109,11 @@
             <input name="cvc" id="cvc" required pattern="^\d{3,4}$" type="text"/>
          </fieldset>
 
-         <p id="footnote">* - Required Item</p>        
-         <input type="button" id="subButton" value="continue" />         
+         <p id="footnote">* - Required Item</p>
+         <input type="button" id="subButton" value="continue" />
       </form>
    </section>
-   
+
    <nav id="columns">
       <ul>
          <li><a href="#">home page</a></li>
@@ -121,22 +122,22 @@
          <li><a href="#">general session</a></li>
          <li><a href="#">exhibits</a></li>
          <li><a href="#">programs</a></li>
-         <li><a href="#">workshops</a></li> 
+         <li><a href="#">workshops</a></li>
          <li><a href="#">committees</a></li>
          <li><a href="#">panel discussion</a></li>
-         <li><a href="#">demonstrations</a></li> 
+         <li><a href="#">demonstrations</a></li>
          <li><a href="#">travel info</a></li>
          <li><a href="#">accommodations</a></li>
          <li><a href="#">banquet</a></li>
          <li><a href="#">family attractions</a></li>
          <li><a href="#">registration</a></li>
-         <li><a href="#">MAS home page</a></li>                                                     
-      </ul>         
-   </nav>   
+         <li><a href="#">MAS home page</a></li>
+      </ul>
+   </nav>
 
    <footer>
       Media Arts Society &copy; 2018 All Rights Reserved
    </footer>
-   
+
 </body>
 </html>
