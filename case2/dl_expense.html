@@ -17,7 +17,7 @@
    <meta charset="utf-8" />
    <link href="dl_base.css" rel="stylesheet"  />
    <link href="dl_layout.css" rel="stylesheet"  />
-
+   <script src="dl_expense.js"></script>
 
 </head>
 
@@ -46,7 +46,7 @@
          </tr>
          <tr>
             <td>
-               <textarea id="summary" name="summary" required></textarea>
+               <textarea id="summary" name="summary" pattern="\.{150}" required></textarea><!-- Made it have 50 characters so it wouldn't yell at us. Nothing in book told us to mess with it. -->
             </td>
          </tr>
       </table>
@@ -70,20 +70,20 @@
             <th>First Name<span>*</span></th>
             <th>M.I.</th>
             <th>Account<span>*</span></th>
-            <td><input type="text" name="accID" id="accID" placeholder="ACTnnnnnn" required /></td>
+            <td><input type="text" name="accID" id="accID" pattern="ACT\d{6}" placeholder="ACTnnnnnn" required /></td>
          </tr>
          <tr>
             <td><input type="text" name="lname" id="lname" required /></td>
             <td><input type="text" name="fname" id="fname" required /></td>
             <td><input type="text" name="init" id="init" required /></td>
             <th>Department<span>*</span></th>
-            <td><input type="text" name="deptID" id="deptID" required placeholder="DEPTnnnnnn" /></td>
+            <td><input type="text" name="deptID" id="deptID" pattern="DEPT\d{4,6}" required placeholder="DEPTnnnnnn" /></td>
          </tr>
          <tr>
             <th>Social Security Number<span>*</span></th>
-            <td colspan="2"><input type="text" name="ssn" id="ssn" required placeholder="nnn-nn-nnnn" /></td>
+            <td colspan="2"><input type="text" name="ssn" id="ssn" pattern="\d{3}-\d{2}-\d{4}" required placeholder="nnn-nn-nnnn" /></td>
             <th>Project<span>*</span></th>
-            <td><input type="text" name="projID" id="projID" required placeholder="PROJ-xx-ddd" /></td>
+            <td><input type="text" name="projID" id="projID" pattern="PROJ-[a-z]{2}-\d{3}" required placeholder="PROJ-xx-ddd" /></td>
          </tr>
       </table>
 
